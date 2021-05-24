@@ -15,7 +15,11 @@ function App() {
     event.preventDefault();
     setList(prev => {
       if (prev.includes(text)) {
-        return prev;
+        prev = prev.filter(a => a!= text)
+        return [
+          text,
+          ...prev
+        ]
       } else {
         return [
           ...prev,
